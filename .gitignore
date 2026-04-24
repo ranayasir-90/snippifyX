@@ -1,0 +1,143 @@
+# ==============================================
+# SnippifyX - Next.js + Firebase Project
+# .gitignore - Comprehensive & Project-Specific
+# ==============================================
+
+# ===========================
+# 🔒 SENSITIVE - KABHI PUSH MAT KARO
+# ===========================
+# Environment variables (Firebase keys yahan hain)
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+*.env
+
+# Firebase Admin / Service Account Keys
+serviceAccountKey.json
+firebase-adminsdk*.json
+*-firebase-adminsdk-*.json
+firebase-config.json
+google-services.json
+GoogleService-Info.plist
+
+# Supabase keys (project mein supabase-js bhi hai)
+supabase/.env
+
+# ===========================
+# 📦 Node Dependencies
+# ===========================
+node_modules/
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# ===========================
+# ⚙️ Next.js Build & Cache
+# ===========================
+/.next/
+/out/
+/build
+.next/cache/
+
+# ===========================
+# 🧪 Testing & Coverage
+# ===========================
+/coverage
+/.nyc_output
+
+# ===========================
+# 🖥️ OS Generated Files
+# ===========================
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+desktop.ini
+$RECYCLE.BIN/
+
+# ===========================
+# 📝 Logs & Debug Files
+# ===========================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+lerna-debug.log*
+*.log
+
+# ===========================
+# 🔑 SSL, Certificates & Keys
+# ===========================
+*.pem
+*.key
+*.cert
+*.p12
+*.pfx
+
+# ===========================
+# 🏗️ TypeScript
+# ===========================
+*.tsbuildinfo
+next-env.d.ts
+
+# ===========================
+# ⚡ Vercel Deployment
+# ===========================
+.vercel
+
+# ===========================
+# 💻 IDE & Editor Files
+# ===========================
+# VSCode
+.vscode/
+*.code-workspace
+
+# IntelliJ / WebStorm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Vim/Emacs
+*.swp
+*.swo
+*~
+\#*\#
+.#*
+
+# ===========================
+# 📋 Temp & Misc
+# ===========================
+.cache/
+.temp/
+tmp/
+temp/
+*.tmp
+*.bak
+*.orig
+
+# ===========================
+# 🛠️ Project-Specific Files
+# (Development/Admin utility files - GitHub par nahi chahiye)
+# ===========================
+firestore-bulk-insert.html
+fix-existing-snippets.html
