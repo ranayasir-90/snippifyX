@@ -1,146 +1,203 @@
-<div align="center">
+# SnippifyX
 
-# 🚀 SnippifyX
+> A modern, full-stack code snippet manager — save, organize, and share your code snippets beautifully.
 
-**A modern, blazing-fast content snippet management application.**
-
-[![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Firebase](https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
-
-[Features](#-features) • [Installation](#-getting-started) • [Deployment](#-deployment--troubleshooting) • [Contributing](#-contributing)
-
-</div>
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-snippify--x.vercel.app-blue?style=flat-square&logo=vercel)](https://snippify-x.vercel.app/)
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat-square&logo=nextdotjs)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black)](https://firebase.google.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
 ---
 
-## ✨ Features
+## Table of Contents
 
-SnippifyX is designed to keep your code organized, accessible, and shareable!
-
-- 🔐 **Authentication**: Secure login/signup with Email/Password & Google OAuth.
-- 📝 **Snippet Management**: Create, edit, organize, and share your favorite code snippets.
-- 📁 **Folder Organization**: Keep your snippets neat and tidy inside folders.
-- 🏷️ **Tagging System**: Add tags for lightning-fast categorization and search.
-- 🌍 **Public Sharing**: Show off your brilliant snippets to the community.
-- 🛡️ **Admin Panel**: Dedicated dashboard to manage content and system settings.
-- 📱 **Responsive Design**: Flawless experience on both desktop and mobile devices!
-
----
-
-## 🔐 Authentication System
-
-We take security seriously! Our authentication is powered by **Firebase** and includes:
-
-*   **Login Methods**: Email/Password and One-click Google OAuth.
-*   **Form Validation**: Real-time validation using Zod schemas.
-*   **Visual Feedback**: Beautiful loading states and user-friendly error messages.
-*   **Security Features**: 
-    * Industry-standard Firebase Auth.
-    * Automatic session management.
-    * Protected routes for users and admins.
+- [About](#about)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Environment Variables](#environment-variables)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
 
 ---
 
-## 🛠️ Tech Stack
+## About
 
-| Frontend | Styling & UI | Backend & Auth | Utilities |
-| :--- | :--- | :--- | :--- |
-| Next.js 14 | Tailwind CSS | Firebase Auth | React Hook Form |
-| React 18 | Radix UI | Firebase Firestore | Zod Validation |
-| TypeScript | React Icons | | |
+**SnippifyX** is a full-featured web application that lets developers save, manage, and share code snippets. Whether you want to keep your go-to code patterns private or share useful utilities with the community, SnippifyX has you covered.
+
+**[🔗 Live Demo → https://snippify-x.vercel.app/](https://snippify-x.vercel.app/)**
 
 ---
 
-## 🚀 Getting Started
+## Features
 
-Follow these instructions to get a copy of the project up and running on your local machine.
+- **Authentication** — Email/password and Google OAuth sign-in via Firebase
+- **Snippet Management** — Create, edit, delete, and search your snippets
+- **Folder Organization** — Group snippets into color-coded folders
+- **Tagging System** — Add custom tags for easy categorization and filtering
+- **Public Sharing** — Make snippets public and share them with the community
+- **Like System** — Like and engage with other developers' public snippets
+- **Real-time Notifications** — Instant alerts for likes and activity
+- **Admin Panel** — Manage users, snippets, folders, and system settings
+- **Responsive Design** — Fully optimized for desktop, tablet, and mobile
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+| --- | --- |
+| Framework | Next.js 14 (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS, Radix UI |
+| Authentication | Firebase Authentication |
+| Database | Firebase Firestore |
+| File Storage | Firebase Storage |
+| Realtime | Firebase Realtime Database |
+| Form Handling | React Hook Form + Zod |
+| Deployment | Vercel |
+
+---
+
+## Getting Started
 
 ### Prerequisites
 
-*   Node.js 18+
-*   npm or yarn
-*   A Firebase project ([Create one here](https://console.firebase.google.com/))
+- [Node.js](https://nodejs.org/) v18 or higher
+- A [Firebase](https://console.firebase.google.com/) project with the following enabled:
+  - Authentication (Email/Password + Google)
+  - Firestore Database
+  - Storage
 
 ### Installation
 
-**1. Clone the repository**
-```bash
-git clone <repository-url>
-cd SnippifyX
-```
+1. **Clone the repository**
 
-**2. Install dependencies**
-```bash
-npm install
-# or
-yarn install
-```
+   ```bash
+   git clone https://github.com/ranayasir-90/snippifyX.git
+   cd snippifyX
+   ```
 
-**3. Set up Environment Variables**
-Create a `.env.local` file in the root directory and add your Firebase configuration:
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables** (see below)
+
+4. **Start the development server**
+
+   ```bash
+   npm run dev
+   ```
+
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Environment Variables
+
+Create a `.env.local` file in the root of the project and add the following:
 
 ```env
-# Client-side Configuration
+# Firebase Client-side Configuration
 NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
 NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
-NEXT_PUBLIC_FIREBASE_DATABASE_URL=https://your_project-default-rtdb.firebaseio.com
 NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
 NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_project.firebasestorage.app
 NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+NEXT_PUBLIC_FIREBASE_DATABASE_URL=https://your_project-default-rtdb.firebaseio.com
 
-# Server-side Configuration (Admin)
+# Firebase Admin SDK (Server-side only)
 FIREBASE_PROJECT_ID=your_project_id
 FIREBASE_CLIENT_EMAIL=your-service-account@your_project.iam.gserviceaccount.com
-FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nYour private key here\n-----END PRIVATE KEY-----\n"
-```
-*(Note: Replace the placeholder values with your actual Firebase project settings!)*
-
-**4. Run the development server**
-```bash
-npm run dev
-# or
-yarn dev
+FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser! 🎉
+> **Note:** Never commit your `.env.local` file. It is already listed in `.gitignore`.
 
 ---
 
-## 🌍 Deployment & Troubleshooting
+## Usage
 
-### Firebase Authorized Domains
-
-For Google authentication to work in production, you **must** add your deployment domain to Firebase's authorized domains:
-
-1. Go to Firebase Console -> Authentication -> Settings -> Authorized domains.
-2. Add your domain (e.g., `your-app.railway.app`, `your-app.vercel.app`).
-
-### Common Issues
-*   **`auth/unauthorized-domain`**: Ensure your production domain is in the Firebase Authorized Domains list.
-*   **Environment Variables**: Double-check that all Firebase variables are properly set in your hosting platform (Vercel, Railway, etc.). Do not include `https://` in the domain fields unless explicitly required by Firebase!
+| Route | Description |
+| --- | --- |
+| `/` | Landing page |
+| `/login` | Sign in to your account |
+| `/signup` | Create a new account |
+| `/dashboard` | Your personal snippet dashboard |
+| `/snippets/new` | Create a new snippet |
+| `/snippets/:id/edit` | Edit an existing snippet |
+| `/folders` | Manage your folders |
+| `/tags` | Manage your tags |
+| `/public` | Browse all public snippets |
+| `/admin` | Admin panel (admin users only) |
 
 ---
 
-## 🤝 Contributing
+## Project Structure
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+```
+snippifyX/
+├── public/                  # Static assets
+├── src/
+│   ├── app/                 # Next.js App Router
+│   │   ├── dashboard/       # User dashboard page
+│   │   ├── snippets/        # Snippet create/edit pages
+│   │   ├── folders/         # Folder management
+│   │   ├── admin/           # Admin panel pages
+│   │   ├── login/           # Authentication pages
+│   │   └── ...
+│   ├── components/          # Reusable UI components
+│   │   ├── ui/              # Base UI primitives
+│   │   └── ...
+│   ├── contexts/            # React Context providers
+│   │   ├── AuthContext.tsx
+│   │   └── NotificationContext.tsx
+│   ├── layouts/             # Shared page layouts
+│   ├── lib/                 # Firebase config and service functions
+│   └── hooks/               # Custom React hooks
+├── .env.local               # Environment variables (not committed)
+├── .gitignore
+├── next.config.js
+├── tailwind.config.js
+└── tsconfig.json
+```
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
+---
+
+## Deployment
+
+This project is deployed on **Vercel**. To deploy your own instance:
+
+1. Push your code to GitHub.
+2. Import the repository on [Vercel](https://vercel.com/).
+3. Add all environment variables from `.env.local` in the Vercel project settings.
+4. Click **Deploy**.
+5. After deployment, add your Vercel domain to Firebase **Authorized Domains**:
+   - Firebase Console → Authentication → Settings → Authorized domains → Add domain
+
+---
+
+## Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+1. Fork the repository
+2. Create a new branch: `git checkout -b feature/your-feature-name`
+3. Make your changes and commit: `git commit -m 'feat: add your feature'`
+4. Push to your branch: `git push origin feature/your-feature-name`
 5. Open a Pull Request
 
+Please make sure your code follows the existing code style and passes linting before submitting.
+
 ---
 
-## 📄 License
 
-This project is licensed under the MIT License.
-
-<div align="center">
-  Made with ❤️ using Next.js & Firebase
-</div>
+> Built by [Rana Yasir](https://github.com/ranayasir-90) · [Live Demo](https://snippify-x.vercel.app/) · [Report an Issue](https://github.com/ranayasir-90/snippifyX/issues)
