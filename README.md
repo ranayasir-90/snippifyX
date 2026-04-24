@@ -199,5 +199,14 @@ Please make sure your code follows the existing code style and passes linting be
 
 ---
 
+<<<<<<< Updated upstream
 
+=======
+## License
+
+Distributed under the [MIT License](LICENSE).
+
+---
+
+>>>>>>> Stashed changes
 > Built by [Rana Yasir](https://github.com/ranayasir-90) · [Live Demo](https://snippify-x.vercel.app/) · [Report an Issue](https://github.com/ranayasir-90/snippifyX/issues)
